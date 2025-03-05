@@ -89,4 +89,14 @@ public class ArrayMathUtils {
         }
         return -1;
     }
+
+    public static String findMax(String[] arr){
+        String max = arr[0];
+        for(String str : arr){
+            if (str.compareTo(max)>0) {
+                max = str;
+            }
+        }
+        return max;
+    }
 }

@@ -39,7 +39,7 @@ public class NotificationTest {
 		ServiceProcessor processor = messageServiceProvider.getProcessor();
 
 		processor.processMessages("This is a test sms", "0165605485");
-		assertEquals(outContent.toString(), "SMS sent to [0165605485] with Message [This is a test sms]");
+		assertEquals("SMS sent to [0165605485] with Message [This is a test sms]", outContent.toString());
 	}
 
 	@Test
@@ -48,8 +48,7 @@ public class NotificationTest {
 		MessageServiceProvider messageServiceProvider = new EmailServiceProvider();
 		ServiceProcessor processor = messageServiceProvider.getProcessor();
 		processor.processMessages("Do you find this test interesting?", "tarossservice@gmail.com");
-		assertEquals(outContent.toString(),
-				"Email sent to [tarossservice@gmail.com] with Message [Do you find this test interesting?]");
+		assertEquals("Email sent to [tarossservice@gmail.com] with Message [Do you find this test interesting?]", outContent.toString());
 	}
 
 	@Test
@@ -58,8 +57,7 @@ public class NotificationTest {
 		MessageServiceProvider messageServiceProvider = new NotificationServiceProvider();
 		ServiceProcessor processor = messageServiceProvider.getProcessor();
 		processor.processMessages("What's the benefit of dependency injection?", "tarossservice@gmail.com");
-		assertEquals(outContent.toString(),
-				"Notification sent to [tarossservice@gmail.com] with Message [What's the benefit of dependency injection?]");
+		assertEquals("Notification sent to [tarossservice@gmail.com] with Message [What's the benefit of dependency injection?]", outContent.toString());
 
 	}
 

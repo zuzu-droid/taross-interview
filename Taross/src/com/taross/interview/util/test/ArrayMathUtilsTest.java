@@ -11,27 +11,35 @@ import com.taross.interview.util.ArrayMathUtils;
 public class ArrayMathUtilsTest {
 
 	@BeforeAll
-	public static void startup() {}
+	public static void startup() {
+		System.out.println("Starting ArrayMathUtils test");
+	}
 
 	@BeforeEach
-	public void setup() {}
+	public void setup() {
+		System.out.println("Setting up test cases");
+	}
 
 	@Test
 	public void testFindMax() {
 		// test method
 		int[] intArr = {0, 1, 2, 3, 4, 5};
-		assertEquals(5, ArrayMathUtils.findMaximum(intArr));
+		assertEquals(5, ArrayMathUtils.findMax(intArr));
 
 		intArr = new int[] {1029, 4029, 444, 3291, 92, 11, 0};
 		assertEquals(4029, ArrayMathUtils.findMax(intArr));
 		
-		// String[] stringArr = new String[] {"abc", "abb", "acb", "def", "cgf"};
-		// assertEquals("def", ArrayMathUtils.findMax(stringArr));
+		String[] stringArr = new String[] {"abc", "abb", "acb", "def", "cgf"};
+		assertEquals("def", ArrayMathUtils.findMax(stringArr));
 	}
 	
 	@AfterEach
-	public void tearDown() {}
+	public void tearDown() {
+		System.out.println("Test cases completed.");
+	}
 
 	@AfterAll
-	public static void shutdown() {}
+	public static void shutdown() {
+		System.out.println("All tests are finished.");
+	}
 }

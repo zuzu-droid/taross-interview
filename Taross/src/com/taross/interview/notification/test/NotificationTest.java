@@ -30,6 +30,9 @@ public class NotificationTest {
 	@BeforeEach
 	public void flushStreams() {
 		// code executed before each test method
+		//these clears captured output before each test
+		outContent.reset();
+		errContent.reset();
 	}
 
 	@Test
@@ -37,7 +40,6 @@ public class NotificationTest {
 		// Test SMS
 		MessageServiceProvider messageServiceProvider = new SmsServiceProvider();
 		ServiceProcessor processor = messageServiceProvider.getProcessor();
-
 		processor.processMessages("This is a test sms", "0165605485");
 		assertEquals("SMS sent to [0165605485] with Message [This is a test sms]", outContent.toString());
 	}
